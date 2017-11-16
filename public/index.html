@@ -10,7 +10,7 @@
     
     </head>
     
-    <body ng-app="face" ng-controller="MainCtrl">
+    <body ng-app="face" ng-controller="MainCtrl" style="background-color:#fffffa;">
     
         <div class="row">
     
@@ -20,24 +20,34 @@
                     <h2>Rate the looks of each person by adjusting the slider at the top, then clicking "Vote" next to the image you want to rate.</h2>
                 </div>
     
-                <form ng-submit="addFace()" style="margin-top30px;">
+                <form ng-submit="addFace()" style="margin-top30px;padding-left:33%">
                     <input type="text" ng-model="imageContent"></input>
                     <button type="submit" class="button btn-danger">Add Face</button>
                     <input type="range" ng-model="ratingContent" style='width:35%;'></input>
                 </form>
-    
-                <div ng-repeat="face in faces | orderBy: '-rating'">
-                    <!-- <span class="glyphicon glyphicon-remove" ng-click="delete(face)"></span> -->
-                    <div>
-                            <img ng-src="{{face.image}}" style='width:35%;' border="0" alt="Null"/>
+                
+                <div style="background-color:WhiteSmoke;border-style:solid;border-width:1px;border-color:Beige;padding-left:30%;border-radius:25px" >
+
+                    <div ng-repeat="face in faces | orderBy: '-rating'" style="padding-top:5px;padding-bottom:5px;height:300px;width:300px;">
+                        <!-- <span class="glyphicon glyphicon-remove" ng-click="delete(face)"></span> -->
+            
+                        <div class="lol" style="border-width:1px;border-color:PapayaWhip;border-style:solid;padding-left:17%;
+                            padding-top:2px; background-color:#e8e8e8;border-radius:15px;">
+                        <div>
+                                <img ng-src="{{face.image}}" class="img-rounded" style='width:200px;height:200px;' border="0" alt="Null"/>
+                        </div>
+                        <div style="padding-left:17%">
+                                Average Rating: {{face.rating}}
+                        </div>
+                        <div style="padding-left:19%;padding-bottom:2px">
+                                <button class="button btn-success" ng-click="addRating(face)" style="width:100px;height:40px;">Vote</button>
+                        </div>
+
+                        </div>
                     </div>
-                    <div>
-                            Average Rating: {{face.rating}}
-                    </div>
-                    <div>
-                            <button class="button btn-success" ng-click="addRating(face)" style="width:100px;height:40px">Vote</button>
-                    </div>
+
                 </div>
+
             </div>
     
         </div>
