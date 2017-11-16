@@ -6,17 +6,20 @@ angular.module('face', [])
     $scope.faces = [];
 
     $scope.addFace = function() {
-      var newface = {image:$scope.formContent,rating:0};
-      $scope.formContent='';
+      var newface = {image:$scope.imageContent,rating:0,total:0,votes:0};
+      $scope.imageContent='';
       $http.post('/faces', newface).success(function(data){
         $scope.faces.push(data);
       });
     };
 
     $scope.vote = function(face) {
-      return $http.put('/faces/' + face._id + '/vote')
+      var newrating = $scope.ratingContent;
+      if(!$scope.ratingContent) newrating = 50;
+      console.log("rating:" + newrating / 10);
+      $scope.ratingContent='';
+      return $http.post('/vote/' + face._id, {rating:newrating})
         .success(function(data){
-          console.log("vote worked");
           face.rating = data.rating;
         });
     };

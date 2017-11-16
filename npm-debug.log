@@ -1,32 +1,34 @@
 0 info it worked if it ends with ok
-1 verbose cli [ '/usr/local/bin/node', '/usr/local/bin/npm', 'start' ]
+1 verbose cli [ '/opt/bitnami/nodejs/bin/.node.bin',
+1 verbose cli   '/opt/bitnami/nodejs/bin/npm',
+1 verbose cli   'start' ]
 2 info using npm@3.10.10
-3 info using node@v6.11.4
+3 info using node@v6.10.3
 4 verbose run-script [ 'prestart', 'start', 'poststart' ]
 5 info lifecycle comment@0.0.0~prestart: comment@0.0.0
 6 silly lifecycle comment@0.0.0~prestart: no script for prestart, continuing
 7 info lifecycle comment@0.0.0~start: comment@0.0.0
 8 verbose lifecycle comment@0.0.0~start: unsafe-perm in lifecycle true
-9 verbose lifecycle comment@0.0.0~start: PATH: /usr/local/lib/node_modules/npm/bin/node-gyp-bin:/Users/tyler/Cloud/School/Fall2017/CS260/creative05_mongo_a_real_looker/node_modules/.bin:/Users/tyler/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/Racket6.10/bin:export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/Racket6.10/bin:/Users/tyler/Library/Android/sdk/platform-tools/
-10 verbose lifecycle comment@0.0.0~start: CWD: /Users/tyler/Cloud/School/Fall2017/CS260/creative05_mongo_a_real_looker
+9 verbose lifecycle comment@0.0.0~start: PATH: /opt/bitnami/nodejs/lib/node_modules/npm/bin/node-gyp-bin:/home/bitnami/creative05_mongo_a_real_looker/node_modules/.bin:/home/bitnami/bin:/opt/bitnami/nodejs/bin:/opt/bitnami/git/bin:/opt/bitnami/mongodb/bin:/opt/bitnami/sqlite/bin:/opt/bitnami/php/bin:/opt/bitnami/python/bin:/opt/bitnami/apache2/bin:/opt/bitnami/common/bin:/opt/bitnami/nodejs/bin:/opt/bitnami/git/bin:/opt/bitnami/mongodb/bin:/opt/bitnami/sqlite/bin:/opt/bitnami/php/bin:/opt/bitnami/python/bin:/opt/bitnami/apache2/bin:/opt/bitnami/common/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
+10 verbose lifecycle comment@0.0.0~start: CWD: /home/bitnami/creative05_mongo_a_real_looker
 11 silly lifecycle comment@0.0.0~start: Args: [ '-c', 'node ./bin/www' ]
 12 silly lifecycle comment@0.0.0~start: Returned: code: 1  signal: null
 13 info lifecycle comment@0.0.0~start: Failed to exec start script
 14 verbose stack Error: comment@0.0.0 start: `node ./bin/www`
 14 verbose stack Exit status 1
-14 verbose stack     at EventEmitter.<anonymous> (/usr/local/lib/node_modules/npm/lib/utils/lifecycle.js:255:16)
+14 verbose stack     at EventEmitter.<anonymous> (/opt/bitnami/nodejs/lib/node_modules/npm/lib/utils/lifecycle.js:255:16)
 14 verbose stack     at emitTwo (events.js:106:13)
 14 verbose stack     at EventEmitter.emit (events.js:191:7)
-14 verbose stack     at ChildProcess.<anonymous> (/usr/local/lib/node_modules/npm/lib/utils/spawn.js:40:14)
+14 verbose stack     at ChildProcess.<anonymous> (/opt/bitnami/nodejs/lib/node_modules/npm/lib/utils/spawn.js:40:14)
 14 verbose stack     at emitTwo (events.js:106:13)
 14 verbose stack     at ChildProcess.emit (events.js:191:7)
-14 verbose stack     at maybeClose (internal/child_process.js:920:16)
-14 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:230:5)
+14 verbose stack     at maybeClose (internal/child_process.js:886:16)
+14 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:226:5)
 15 verbose pkgid comment@0.0.0
-16 verbose cwd /Users/tyler/Cloud/School/Fall2017/CS260/creative05_mongo_a_real_looker
-17 error Darwin 17.2.0
-18 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "start"
-19 error node v6.11.4
+16 verbose cwd /home/bitnami/creative05_mongo_a_real_looker
+17 error Linux 3.13.0-119-generic
+18 error argv "/opt/bitnami/nodejs/bin/.node.bin" "/opt/bitnami/nodejs/bin/npm" "start"
+19 error node v6.10.3
 20 error npm  v3.10.10
 21 error code ELIFECYCLE
 22 error comment@0.0.0 start: `node ./bin/www`

@@ -11,7 +11,7 @@ var Face = mongoose.model('Face');
 
 // Faces GET
 router.get('/faces', function(req, res, next) {
-  Face.find(function(err, comments){
+  Face.find(function(err, faces){
     if(err){ return next(err); }
     res.json(faces);
   });
@@ -36,7 +36,7 @@ router.delete('/faces/:face', function(req, res) {
 // Find Face by param
 router.param('face', function(req, res, next, id) {
   var query = Face.findById(id);
-  query.exec(function (err, comment){
+  query.exec(function (err, face){
     if (err) { return next(err); }
     if (!face) { return next(new Error("can't find face")); }
     req.face = face;
@@ -48,9 +48,9 @@ router.get('/faces/:face', function(req, res) {
   res.json(req.face);
 });
 
-// Upvote a comment by its ID
-router.put('/faces/:face/vote', function(req, res, next) {
-  req.face.vote(function(err, comment){
+// Upvote a face by its ID
+router.post('/vote/:face', function(req, res, next) {
+  req.face.vote(req.body, function(err, face){
     if (err) { return next(err); }
     res.json(face);
   });
